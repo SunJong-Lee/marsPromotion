@@ -1,4 +1,4 @@
-package com.mars.marspromotion.service;
+package com.mars.marspromotion.application;
 
 import com.mars.marspromotion.entity.Apply;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.mars.marspromotion.service;
+package com.mars.marspromotion.application;
 
 import com.mars.marspromotion.entity.Apply;
 import com.mars.marspromotion.repository.ApplyJpaRepository;
@@ -18,7 +18,7 @@ public class ApplyService {
         return this.applyJpaRepository.save(apply);
     }
 
-    public Optional<Apply> findApplyById(Long id) {
-        return this.applyJpaRepository.findById(id);
+    public Apply findApplyById(Long id) {
+        return this.applyJpaRepository.findById(id).orElseThrow(() -> new NullPointerException());
     }
 }

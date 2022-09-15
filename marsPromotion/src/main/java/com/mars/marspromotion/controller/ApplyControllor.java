@@ -1,8 +1,8 @@
 package com.mars.marspromotion.controller;
 
 import com.mars.marspromotion.entity.Apply;
-import com.mars.marspromotion.service.ApplyService;
-import com.mars.marspromotion.service.CreateApplyRequest;
+import com.mars.marspromotion.application.ApplyService;
+import com.mars.marspromotion.application.CreateApplyRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +21,8 @@ public class ApplyControllor {
     }
 
     @GetMapping("{id}")
-    public Optional<Apply> findApplyById(@PathVariable(name = "id") Long id){
-        return applyService.findApplyById(id);
+    public ApplyResponse findApplyById(@PathVariable(name = "id") Long id){
+        return new ApplyResponse(applyService.findApplyById(id));
     }
 
 
