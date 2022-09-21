@@ -15,7 +15,6 @@ public class CreateApplyRequest {
 
     public Apply toEntity() {
         Apply apply = Apply.builder()
-                .id(id)
                 .name(name)
                 .objective(objective)
                 .phoneNumber(phoneNumber)
@@ -25,8 +24,7 @@ public class CreateApplyRequest {
     }
 
     @Builder
-    public CreateApplyRequest(Long id, String name, String phoneNumber, int type, String objective) {
-        this.id = id;
+    public CreateApplyRequest(String name, String phoneNumber, int type, String objective) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.type = type;

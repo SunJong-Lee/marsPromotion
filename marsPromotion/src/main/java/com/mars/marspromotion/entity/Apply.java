@@ -32,19 +32,7 @@ public class Apply {
     private String objective;
 
     @Builder
-    public Apply(Long id, String name, String phoneNumber, int type, String objective) {
-        this.id = id;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.type = type;
-        this.objective = objective;
-    }
-
-    public static Apply create(String name, String phoneNumber, int type, String objective) {
-        return new Apply(name, phoneNumber, type, objective);
-    }
-
-    private Apply(String name, String phoneNumber, int type, String objective) {
+    public Apply(String name, String phoneNumber, int type, String objective) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.type = type;
