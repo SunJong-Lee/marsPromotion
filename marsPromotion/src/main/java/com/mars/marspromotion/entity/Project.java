@@ -33,4 +33,7 @@ public class Project {
 
     @Column(name = "type")
     private int type;
+
+    @Column(name = "del_yn")
+    private String delYn;
 }

@@ -1,6 +1,8 @@
 package com.mars.marspromotion.controller;
 
 import com.mars.marspromotion.application.ProjectService;
+import com.mars.marspromotion.common.ResponseService;
+import com.mars.marspromotion.common.SingleResponse;
 import com.mars.marspromotion.entity.Project;
 import com.mars.marspromotion.vo.ProjectResponse;
 import lombok.RequiredArgsConstructor;
@@ -17,10 +19,12 @@ import java.util.List;
 public class ProjectController {
 
     private final ProjectService projectService;
+    private final ResponseService responseService;
 
     @GetMapping("{id}")
-    public ProjectResponse findProjectById(@PathVariable(name = "id") Long id){
-        return new ProjectResponse(projectService.findProjectById(id));
+    public SingleResponse<ProjectResponse> findProjectById(@PathVariable(name = "id") Long id){
+        return responseService.getSingleResponse(new ProjectResponse(projectService.findProjectById(id)));
+//        return new ProjectResponse(projectService.findProjectById(id));
     }
 
     @GetMapping("")

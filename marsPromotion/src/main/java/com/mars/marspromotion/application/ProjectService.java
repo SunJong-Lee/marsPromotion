@@ -4,6 +4,7 @@ import com.mars.marspromotion.entity.Project;
 import com.mars.marspromotion.repository.ProjectJpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,7 +21,20 @@ public class ProjectService {
     }
 
     public List<Project> findProjectAll() {
-        return this.projectJpaRepository.findAll();
+        List<Project> list = this.projectJpaRepository.findAll();
+//        for(int i = 0; i < list.toArray().length; i++){
+//
+//        }
+        List<Project> returnList = new ArrayList<>();
+        for (Project project: list) {
+            String delYn = project.getDelYn();
+            if(delYn == "N"){
+                returnList.add(project);
+                System.out.println(project);
+            }
+        }
+//        return this.projectJpaRepository.findAll();
+        return returnList;
     }
 
 
