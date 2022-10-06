@@ -1,7 +1,9 @@
 package com.mars.marspromotion.common;
 
-import java.util.List;
+import lombok.Getter;
 
+import java.util.List;
+@Getter
 public class ListResponse<T> extends CommonResponse{
     List<T> dataList;
 }
