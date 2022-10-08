@@ -12,9 +12,9 @@ spring:
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/test
+    url: jdbc:mariadb://localhost:3306/mars?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: 1q2w3e4r!!
+    password: qwer1!
 
   jpa:
     hibernate:

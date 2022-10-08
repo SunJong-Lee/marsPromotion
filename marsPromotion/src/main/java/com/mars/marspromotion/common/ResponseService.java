@@ -29,12 +29,11 @@ public class ResponseService {
         response.message = "SUCCESS";
     }
 
-    public CommonResponse setErrorResponse(int code, String message) {
+    public CommonResponse getErrorResponse(int code, String message) {
         CommonResponse response = new CommonResponse();
-        response.code = code;
         response.success = false;
+        response.code = code;
         response.message = message;
         return response;
     }
-
 }
