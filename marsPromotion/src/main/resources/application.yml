@@ -12,13 +12,13 @@ spring:
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/mars?allowPublicKeyRetrieval=true&useSSL=false
-    username: root
-    password: qwer1!
+    url: jdbc:mariadb://211.253.11.94:3306/mars_sequel
+    username: mars_user
+    password: mars2022!@#
 
   jpa:
     hibernate:
-      ddl-auto: update # 어플리케이션을 시작할 때 데이터베이스를 초기화하고 다시 테이블 생성
+      ddl-auto: none # 어플리케이션을 시작할 때 데이터베이스를 초기화하고 다시 테이블 생성
     properties:
       hibernate:
         format_sql: true # 실행되는 query를 보여줌
